@@ -1,16 +1,29 @@
 package com.example.springbootdemo.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import lombok.Getter;
 import lombok.NonNull;
+import lombok.Setter;
+
+import java.util.Objects;
+
 @Entity
+@Table(name = "person")
 public class Person {
     @Id
     @NonNull
     @GeneratedValue
     private Long id;
     private String name;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getName() {
         return name;
     }
@@ -19,13 +32,16 @@ public class Person {
         this.name = name;
     }
 
-
-
-    public void setId(Long id) {
-        this.id = id;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return Objects.equals(id, person.id);
     }
 
-    public Long getId() {
-        return id;
+    @Override
+    public int hashCode() {
+        return 13;
     }
 }

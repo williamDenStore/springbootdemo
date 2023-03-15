@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Persons</title>
+</head>
+<body>
+<button onclick="window.location.href='showPersons?lang=en';">
+    English
+</button>
+<button onclick="window.location.href='showPersons?lang=sv';">
+    Svenska
+</button>
+    <h1>Hello World</h1>
+    <div class="left">
+    <h1 th:text="#{greeting}"></h1>
+    <table>
+        <tr th:each="pers:${allpersons}">
+            <td th:text="${pers.getName()}"></td>
+        </tr>
+    </table>
+    </div>
+    <div class="right">
+        <h1>test1234</h1>
+        <table>
+            <tr th:each="pers:${allpersons}">
+                <td th:text="${pers.getId()}"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
+<style>
+    h1 {
+        color: aqua;
+    }
+    body{
+        background: black;
+    }
+    .left{
+        float: left;
+    }
+    .right{
+        float: right;
+    }
+    td{
+        color: white;
+    }
+</style>

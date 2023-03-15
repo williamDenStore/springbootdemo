@@ -1,4 +1,4 @@
-package com.example.springbootdemo;
+package com.example.springbootdemo.controller;
 
 import com.example.springbootdemo.entity.Person;
 import com.example.springbootdemo.repository.PersonRepository;
@@ -25,6 +25,7 @@ public class PersonController {
     }
     @PostMapping
     void addName(@RequestBody Person person){
+        String name = person.getName();
         repo.save(person);
     }
     @GetMapping("/lang")
