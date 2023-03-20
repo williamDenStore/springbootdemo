@@ -1,9 +1,7 @@
 package com.example.springbootdemo.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
 import lombok.NonNull;
-import lombok.Setter;
 
 import java.util.Objects;
 
