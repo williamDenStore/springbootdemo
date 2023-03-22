@@ -21,7 +21,7 @@ public class OrganizationController {
         orgRepo = organizationRepository;
         personRepo = personRepository;
     }
-
+//(org == ad) (person == company)
     @PostMapping
     void addOrg(@RequestBody Organization org) {
         var copyOfPersons = Set.copyOf(org.getPersons());
